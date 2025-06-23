@@ -6,7 +6,7 @@ const About = () => {
     degree: 'BE in Information Science & Engineering',
     institution: 'GM Institute of Technology',
     period: '2021-2025',
-    status: 'Pursuing'
+    status: 'Final Year Student'
   };
 
   const internships = [
@@ -42,7 +42,7 @@ const About = () => {
   const socialLinks = [
     {
       name: 'View Resume',
-      url: 'https://srujan-ks-portfolio.vercel.app/',
+      url: 'https://flowcv.com/resume/faql9tv9o50n/',
       icon: <ExternalLink className="h-5 w-5" />
     },
     {
@@ -109,7 +109,7 @@ const About = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>airesumeanalyzeteam@gmail.com</span>
+              <span>srujan.ks0903@gmail.com</span>
             </div>
           </div>
         </div>

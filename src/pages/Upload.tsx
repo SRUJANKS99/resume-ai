@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
-import { Upload as UploadIcon, FileText, CheckCircle, AlertCircle, TrendingUp, ArrowLeft, ArrowRight, Lightbulb, Target, Zap } from 'lucide-react';
+import {
+  Upload as UploadIcon,
+  FileText,
+  CheckCircle,
+  AlertCircle,
+  TrendingUp,
+  ArrowLeft,
+  ArrowRight,
+  Lightbulb,
+  Target,
+  Zap
+} from 'lucide-react';
 
 interface AnalysisResult {
   score: number;
@@ -26,10 +37,8 @@ const Upload = () => {
 
   const analyzeResume = async () => {
     if (!file) return;
-    
     setIsAnalyzing(true);
-    
-    // Simulate AI analysis
+
     setTimeout(() => {
       const mockAnalysis: AnalysisResult = {
         score: 78,
@@ -59,7 +68,7 @@ const Upload = () => {
         keywords: ['React', 'JavaScript', 'Node.js', 'Python', 'AWS', 'Git', 'Agile', 'SQL'],
         rolefit: 'Software Developer'
       };
-      
+
       setAnalysis(mockAnalysis);
       setIsAnalyzing(false);
     }, 3000);
@@ -87,7 +96,6 @@ const Upload = () => {
 
         {!analysis ? (
           <div className="bg-white rounded-lg shadow-lg p-8">
-            {/* File Upload */}
             <div className="border-2 border-dashed border-slate-300 rounded-lg p-8 text-center hover:border-blue-400 transition-colors">
               <input
                 type="file"
@@ -157,8 +165,8 @@ const Upload = () => {
               </p>
             </div>
 
+            {/* Strengths & Weaknesses */}
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Strengths */}
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <CheckCircle className="h-6 w-6 text-green-600" />
@@ -176,7 +184,6 @@ const Upload = () => {
                 </div>
               </div>
 
-              {/* Weaknesses */}
               <div className="bg-white rounded-lg shadow-lg p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <AlertCircle className="h-6 w-6 text-orange-600" />
@@ -195,7 +202,7 @@ const Upload = () => {
               </div>
             </div>
 
-            {/* Enhanced Suggestions */}
+            {/* Suggestions */}
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center space-x-2 mb-4">
                 <Lightbulb className="h-6 w-6 text-purple-600" />
@@ -212,7 +219,7 @@ const Upload = () => {
                       <p className="text-slate-700 leading-relaxed">{analysis.suggestions[currentSuggestion]}</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between pt-4 border-t border-slate-200">
                     <div className="flex items-center space-x-2">
                       <Target className="h-4 w-4 text-slate-500" />
@@ -236,8 +243,6 @@ const Upload = () => {
                     </div>
                   </div>
                 </div>
-                
-                {/* Progress indicator */}
                 <div className="flex justify-center mt-4 space-x-2">
                   {analysis.suggestions.map((_, index) => (
                     <div
@@ -291,16 +296,13 @@ const Upload = () => {
               </div>
             </div>
 
-            {/* Actions */}
-            <div className="flex justify-center space-x-4">
+            {/* Only one button here now */}
+            <div className="flex justify-center">
               <button
                 onClick={() => setAnalysis(null)}
                 className="bg-slate-600 text-white px-6 py-3 rounded-lg hover:bg-slate-700 transition-colors"
               >
                 Analyze Another Resume
-              </button>
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                Download Detailed Report
               </button>
             </div>
           </div>
@@ -311,3 +313,4 @@ const Upload = () => {
 };
 
 export default Upload;
+
